@@ -3,7 +3,7 @@ Space48_Times
 
 Description
 -----------
-
+Module for custom opening times and messages, configured in the admin and shown on the frontend (CMS -> Manage opening times).
 
 Most Recent Location
 --------------------
