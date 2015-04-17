@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Space48_Times>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends></depends>
+        </Space48_Times>
+    </modules>
+</config>

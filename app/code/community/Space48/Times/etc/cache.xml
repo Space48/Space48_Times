@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <placeholders>
+        <space48_times>
+            <block>space48_times/times</block>
+            <placeholder>SPACE48_TIMES_FPC</placeholder>
+            <container>Space48_Times_Model_Fpc</container>
+            <cache_lifetime>1</cache_lifetime>
+        </space48_times>
+    </placeholders>
+</config>

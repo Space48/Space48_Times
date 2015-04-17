@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Space48_Times>
+            <version>1.2.0</version>
+        </Space48_Times>
+    </modules>
+
+    <!-- global section for blocks helpers and misc configuration -->
+    <global>
+        <blocks>
+            <space48_times>
+                <class>Space48_Times_Block</class>
+            </space48_times>
+            <space48_custom>
+                <class>Space48_Times_Block</class>
+            </space48_custom>
+        </blocks>
+        <helpers>
+            <space48_times>
+                <class>Space48_Times_Helper</class>
+            </space48_times>
+        </helpers>
+        <models>
+            <times>
+                <class>Space48_Times_Model</class>
+                <resourceModel>times_mysql</resourceModel>
+            </times>
+            <times_mysql>
+                <class>Space48_Times_Model_Mysql</class>
+                <entities>
+                    <times>
+                        <table>space48_times</table>
+                    </times>
+                </entities>
+            </times_mysql>
+        </models>
+        <resources>
+            <!-- write connection -->
+            <space48_times_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </space48_times_write>
+            <!-- read connection -->
+            <space48_times_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </space48_times_read>
+
+            <space48times_setup>
+                <setup>
+                    <module>Space48_Times</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </space48times_setup>
+        </resources>
+    </global>
+
+    <!-- frontend rule set -->
+    <frontend>
+        <routers>
+            <space48timefrontend>
+                <use>standard</use>
+                <args>
+                    <module>Space48_Times</module>
+                    <frontName>openingtimes</frontName>
+                </args>
+            </space48timefrontend>
+        </routers>
+
+        <layout>
+            <updates>
+                <space48_times>
+                    <file>Space48Times.xml</file>
+                </space48_times>
+            </updates>
+        </layout>
+    </frontend>
+
+    <!-- define some admin rules and names to be used -->
+    <admin>
+        <routers>
+            <Space48_Times>
+                <use>admin</use>
+                <args>
+                    <module>Space48_Times</module>
+                    <frontName>times</frontName>
+                </args>
+            </Space48_Times>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <space48times>
+                    <file>Space48_Times.xml</file>
+                </space48times>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

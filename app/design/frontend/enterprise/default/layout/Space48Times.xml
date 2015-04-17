@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="header">
+            <block type="space48_times/times" name="space48.times" as="space48.times" template="space48/times.phtml"/>
+            <block type="space48_times/times" name="space48.times.small" as="space48.times.small" template="space48/timesSmall.phtml"/>
+        </reference>
+    </default>
+
+    <space48timefrontend_index_index>
+        <reference name="content">
+            <block type="space48_times/times" name="space48.times" as="space48.times" template="space48/times.phtml" />
+        </reference>
+    </space48timefrontend_index_index>
+
+</layout>

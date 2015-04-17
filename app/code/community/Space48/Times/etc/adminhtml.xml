@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <cms>
+            <children>
+                <times translate="title" module="space48_times">
+                    <title>Manage Opening Times</title>
+                    <sort_order>0</sort_order>
+                    <children>
+                        <gui translate="title">
+                            <title>Default Opening / Closing Times</title>
+                            <action>times/adminhtml_index</action>
+                            <sort_order>30</sort_order>
+                        </gui>
+                        <profiles translate="title">
+                            <title>Custom Opening / Closing Times</title>
+                            <action>times/adminhtml_custom/index</action>
+                            <sort_order>40</sort_order>
+                        </profiles>
+                    </children>
+                </times>
+            </children>
+        </cms>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <Space48_Times translate="title" module="space48_times">
+                                <title>Manage Opening Times</title>
+                            </Space48_Times>
+                        </children>
+                    </cms>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

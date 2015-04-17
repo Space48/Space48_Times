@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <space48_times_adminhtml_index_index>
+        <reference name="content">
+            <block type="space48_times/adminhtml_times" name="times_grid" as="times_grid"/>
+        </reference>
+    </space48_times_adminhtml_index_index>
+
+    <space48_times_adminhtml_index_test>
+        <reference name="content">
+            <block type="space48_times/adminhtml_custom" name="times_grid" as="times_grid"/>
+        </reference>
+    </space48_times_adminhtml_index_test>
+
+    <!-- custom grid for times and message -->
+    <space48_times_adminhtml_custom_index>
+        <reference name="content">
+            <block type="space48_times/adminhtml_custom" name="times_grid" as="times_grid"/>
+        </reference>
+    </space48_times_adminhtml_custom_index>
+</layout>

@@ -1,0 +1,57 @@
+<span class="opening-time">We are open until <b class="time"><?php echo $this->getStoreCloseTime(); ?></b>!</span>
+<span class="tel"><?php echo $this->getStoreTelephone(); ?></span>
+<script>
+    jQuery(function($){
+        var aOpeningTimes = <?php echo json_encode($this->getAllOpeningTimes()); ?>,
+            aCustomOpeningTimes = <?php echo json_encode($this->getAllCustomOpeningTimes()); ?>,
+            $cornerCallUs = $('.corner-call-us'),
+            today = new Date(),
+            currentDay = today.getDay(),
+            currentDate = today.toISOString().split('T')[0],
+            showCornerCU = false;
+
+        // Check weekdays
+        if(aOpeningTimes[currentDay]) {
+            var openedToday = aOpeningTimes[currentDay],
+                startDate = new Date(today.getTime()),
+                endDate = new Date(today.getTime());
+
+            startDate.setHours(openedToday['open_time'][0]);
+            startDate.setMinutes(openedToday['open_time'][1]);
+            startDate.setSeconds(openedToday['open_time'][2]);
+
+            endDate.setHours(openedToday['close_time'][0]);
+            endDate.setMinutes(openedToday['close_time'][1]);
+            endDate.setSeconds(openedToday['close_time'][2]);
+
+            if(today > startDate && today < endDate) {
+                showCornerCU = true;
+            }
+
+            if(openedToday['show'] == '1') {
+                showCornerCU = true;
+            }
+        }
+
+        // Check custom days
+        if(aCustomOpeningTimes[currentDate]) {
+            var openedToday = aCustomOpeningTimes[currentDate],
+                startDate = new Date(openedToday['open_time'] * 1000),
+                endDate = new Date(openedToday['close_time'] * 1000);
+
+            if(today > startDate && today < endDate) {
+                showCornerCU = true;
+            } else if(openedToday['show'] == '1') {
+                showCornerCU = true;
+            } else {
+                showCornerCU = false;
+            }
+        }
+
+        if(!showCornerCU) {
+            $cornerCallUs.remove();
+        } else {
+            $cornerCallUs.addClass('active');
+        }
+    });
+</script>
